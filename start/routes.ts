@@ -36,9 +36,3 @@ Route.get("*", async ({ response }) => {
 Route.post("*", async ({ response }) => {
   return response.status(404).send({ error: 404 });
 });
-Route.delete("*", async ({ response }) => {
-  return response.status(404).send({ error: 404 });
-});
-Route.put("*", async ({ response }) => {
-  return response.status(404).send({ error: 404 });
-});
