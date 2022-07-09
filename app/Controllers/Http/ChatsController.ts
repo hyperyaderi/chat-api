@@ -13,6 +13,10 @@ export default class ChatsController {
   }
   async sendMessage({ request }) {
     const { name, message } = request.all();
+    if (name === "") return { error: 403 };
+    if (message === "") return { error: 403 };
+    if (message.length > 70) return { error: 403 };
+    if (name.length > 20) return { error: 403 };
     await Message.create({
       name: name,
       message: message,
